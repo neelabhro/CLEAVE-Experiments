@@ -1,0 +1,49 @@
+virtualenv --python=python3.8 -vvv --creator venv Desktop
+(virtualenv --python=python3.8 ./venv)
+
+. ./Desktop/bin/activate
+( . ./venv/bin/activate)
+
+cd ./CLEAVE
+
+
+pip install msgpack==1.0.0 (Check that msgpack version 0.6.2 gets uninstalled)
+[ Get into the python console by typing:
+1. $python
+2. >import msgpack
+3. > msgpack.version
+
+If output is (1,0,0), then the installation has been done correctly]
+
+
+pip install click
+
+
+pip install twisted
+
+
+pip install loguru
+
+
+pip install msgpack_numpy
+
+
+pip install klein
+
+
+python cleave.py run-controller examples/inverted_pendulum/controller/config.py
+
+
+python cleave.py run-plant examples/inverted_pendulum/plant/config_with_viz.py 
+
+
+ 
+#pip3 install msgpack-python==1.0.0
+
+
+In case of errors on the controller side, mentioning that desired port is already being listened to,
+check the process using 
+$lsof -i:PORT_NUMBER
+
+Then kill that process using:
+$kill $(lsof -t -i:PORT_NUMBER)
