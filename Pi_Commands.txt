@@ -1,0 +1,17 @@
+#Check the temperature of the Pi. Maintain the temperature below 80'C.
+1. /opt/vc/bin/vcgencmd measure_temp
+
+#Check the respective CPU Frequencies
+1. Current Frequency: sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+2. Minimum Frequency: sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+3. Maximum Frequency: sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+
+#To overclock your Pi 4:
+1. sudo nano /boot/config.txt
+2. #uncomment to overclock the arm. 700 MHz is
+the default.
+over_voltage=2
+arm_freq=1750
+3. sudo reboot
+4. Monitor frequency using:
+watch -n 1 vcgencmd measure_clock arm   OR    sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
