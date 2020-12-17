@@ -12,8 +12,17 @@
 the default.
 over_voltage=2
 arm_freq=1750
-#(he over_voltage command adjusts the core CPU/GPU voltage, and accepts figures between -16 and 8. The default value is 0.
-A faster CPU speed demands higher voltage and, if Raspberry Pi doesn’t get enough volts, you will see a small lightning bolt appearing in the top right of the window,  this point, the CPU will be reduced to the 700MHz default speed)
+#(CPU/GPU core voltage adjustment. The value should be in the range [-16, 8] which equates to the range [0.8V, 1.4V] with 0.025V steps. In other words, specifying -16 will give 0.8V as the GPU/core voltage, and specifying 8 will give 1.4V. For defaults see table below.)
+2. #uncomment to overclock the arm. 700 MHz is
+the default.
+over_voltage=6
+arm_freq=2147
+gpu_freq=750
+#(This is the maximum overclocking limit possible in Raspberry Pi 4b)
 3. sudo reboot
 4. Monitor frequency using:
 watch -n 1 vcgencmd measure_clock arm   OR    sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+
+
+To lock the CPU to the max set frequency even when idle, use:
+1. force_turbo=1
