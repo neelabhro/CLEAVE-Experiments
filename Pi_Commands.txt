@@ -12,6 +12,8 @@
 the default.
 over_voltage=2
 arm_freq=1750
+#(he over_voltage command adjusts the core CPU/GPU voltage, and accepts figures between -16 and 8. The default value is 0.
+A faster CPU speed demands higher voltage and, if Raspberry Pi doesn’t get enough volts, you will see a small lightning bolt appearing in the top right of the window,  this point, the CPU will be reduced to the 700MHz default speed)
 3. sudo reboot
 4. Monitor frequency using:
 watch -n 1 vcgencmd measure_clock arm   OR    sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
