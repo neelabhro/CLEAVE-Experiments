@@ -31,10 +31,13 @@ pip install msgpack_numpy
 pip install klein
 
 
-python cleave.py run-controller examples/inverted_pendulum/controller/config.py
+python cleave.py -vvvvv run-controller examples/inverted_pendulum/controller/config.py
 
 
-python cleave.py run-plant examples/inverted_pendulum/plant/config_with_viz.py 
+python cleave.py -vvvvv run-plant examples/inverted_pendulum/plant/config_with_viz.py 
+
+
+python cleave.py -vvvvv run-plant examples/inverted_pendulum/plant/config.py 
 
 
  
