@@ -1,10 +1,13 @@
+git clone https://github.com/KTH-EXPECA/CLEAVE.git
+cd ./CLEAVE
 virtualenv --python=python3.8 -vvv --creator venv Desktop
 (virtualenv --python=python3.8 ./venv)
 
 . ./Desktop/bin/activate
 ( . ./venv/bin/activate)
+pip install -Ur ./requirements.txt
 
-cd ./CLEAVE
+
 
 
 pip install msgpack==1.0.0 (Check that msgpack version 0.6.2 gets uninstalled)
