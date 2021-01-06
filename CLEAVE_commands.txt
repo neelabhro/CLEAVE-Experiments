@@ -54,3 +54,10 @@ $lsof -i:PORT_NUMBER
 
 Then kill that process using:
 $kill $(lsof -t -i:PORT_NUMBER)
+
+
+
+Commands with docker
+sudo bash build_docker_dispatcher.sh 
+sudo bash run_dispatcher_docker.sh
+kill -9 $(lsof -t -i:8080)
