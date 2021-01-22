@@ -61,3 +61,16 @@ Commands with docker
 sudo bash build_docker_dispatcher.sh 
 sudo bash run_dispatcher_docker.sh
 kill -9 $(lsof -t -i:8080)
+
+
+
+
+
+
+
+cd ./CLEAVE
+git checkout master
+git reset --hard
+git pull origin experiment_hack
+. ./venv/bin/activate
+bash run_experiment_plant.sh 192.68.0.116 1
