@@ -73,4 +73,4 @@ git checkout master
 git reset --hard
 git pull origin experiment_hack
 . ./venv/bin/activate
-bash run_experiment_plant.sh 192.68.0.116 1
+bash run_experiment_plant.sh 192.168.0.116 1
