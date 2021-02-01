@@ -74,3 +74,8 @@ git reset --hard
 git pull origin experiment_hack
 . ./venv/bin/activate
 bash run_experiment_plant.sh 192.168.0.116 1
+
+
+
+To update config files remotely via SSH:
+bash ssh_setup.sh pi@IP_Address
