@@ -26,3 +26,6 @@ watch -n 1 vcgencmd measure_clock arm   OR    sudo cat /sys/devices/system/cpu/c
 
 To lock the CPU to the max set frequency even when idle, use:
 1. force_turbo=1
+
+
+sudo cpupower frequency-set -g performance
