@@ -1,0 +1,25 @@
+"Modern processors scale the CPU frequency, even in performance mode and as a function of the depth of the idle state they go into. 
+If you really want to lock the CPU frequency then disable all idle states deeper than 0. 
+However, note that it will cost a huge huge amount of power."
+
+
+
+
+# set "performance" as default governorapt-get install -y cpufrequtils
+echo 'GOVERNOR="performance"' | tee /etc/default/cpufrequtils
+systemctl disable ondemand
+systemctl restart cpufrequtils
+# test that the command works. If needed, install required 
+# packages, such as 
+# linux-tools-common linux-tools-4.15.0-65-genericcpupower idle-set --disable-by-latency 0# make systemd run it at startup:
+cat >/etc/systemd/system/disable_cpu_idle_states.service <<'EOT'
+[Unit]
+Description=Disable idle CPU states
+After=cpufrequtils.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cpupower idle-set --disable-by-latency 0
+[Install]
+WantedBy=multi-user.target
+EOTsystemctl daemon-reload
+systemctl enable disable_cpu_idle_states# if everything went well, reboot
