@@ -14,6 +14,8 @@ CLEAVE is part of the [ExPECA](https://www.jamesgross.org/research/expeca/) rese
 
 Please see our documentation online at [cleave.readthedocs.io]( https://cleave.readthedocs.io/en/latest/).
 
+## Network Design
+![](CLEAVE.jpg)
 ## License
 
 Copyright 2020 KTH Royal Institute of Technology
