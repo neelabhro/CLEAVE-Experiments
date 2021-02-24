@@ -79,3 +79,9 @@ bash run_experiment_plant.sh 192.168.0.116 1
 
 To update config files remotely via SSH:
 bash ssh_setup.sh pi@IP_Address
+
+
+
+python util_scripts/run_centralized_experiment.py -d 10m --plant-addr-template "192.168.1.212" 192.168.0.102 1 /home/wlab/Desktop/Test
+
+
