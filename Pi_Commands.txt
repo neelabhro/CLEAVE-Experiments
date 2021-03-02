@@ -29,3 +29,4 @@ To lock the CPU to the max set frequency even when idle, use:
 
 
 sudo cpupower frequency-set -g performance
+rsync -avzh wlab@192.168.1.101:/home/wlab/Desktop/LimeSpectrumAnalyzer.grc /home/wlab/Desktop
