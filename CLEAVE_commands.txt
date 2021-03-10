@@ -89,9 +89,11 @@ Check WiFi SSID the Pi is connected to using: iwgetid
 Update Wifi using Terminal:
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 network={
-    ssid="testing"
-    psk="testingPassword"
+        ssid="EXIBEL_f22712_5G"
+        psk="94HWCT3HMURCH"
+        key_mgmt=WPA-PSK
 }
+
 
 wpa_cli -i wlan0 reconfigure
 ifconfig wlan0
