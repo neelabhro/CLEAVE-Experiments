@@ -86,3 +86,13 @@ python util_scripts/run_centralized_experiment.py -d 10m --plant-addr-template "
 Check WiFi SSID the Pi is connected to using: iwgetid
 
 
+Update Wifi using Terminal:
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+network={
+    ssid="testing"
+    psk="testingPassword"
+}
+
+wpa_cli -i wlan0 reconfigure
+ifconfig wlan0
+
