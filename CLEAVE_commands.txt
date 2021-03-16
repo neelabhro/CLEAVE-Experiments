@@ -98,3 +98,11 @@ network={
 wpa_cli -i wlan0 reconfigure
 ifconfig wlan0
 
+
+To update WiFi to the open network:
+network={
+        ssid="MANGO-AP"
+        key_mgmt=NONE
+}
+wpa_cli -i wlan0 reconfigure
+sudo ifconfig wlan0 10.0.0.10 netmask 255.255.255.0 up
