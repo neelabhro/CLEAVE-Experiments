@@ -1,0 +1,11 @@
+git clone https://github.com/neelabhro/CLEAVE.git
+cd ./CLEAVE
+virtualenv --python=python3.8 ./venv
+. ./venv/bin/activate
+pip install -Ur ./requirements.txt
+git checkout master
+git reset --hard
+git pull origin project_course_2021
+
+python cleave.py -vvvvv run-controller examples/inverted_pendulum/controller/config.py
+python cleave.py -vvvvv run-plant examples/inverted_pendulum/plant/config.py 
